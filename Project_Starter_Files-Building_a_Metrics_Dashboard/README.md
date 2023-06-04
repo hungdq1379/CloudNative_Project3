@@ -4,6 +4,8 @@
 
 *TODO:* run `kubectl` command to show the running pods and services for all components. Take a screenshot of the output and include it here to verify the installation
 
+![image](https://github.com/hungdq1379/CloudNative_Project3/assets/113217676/63aecbb6-1ea8-4f54-b94b-ddd696f3d704)
+
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
 
