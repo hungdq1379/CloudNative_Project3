@@ -12,6 +12,7 @@
 
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
+![image](https://github.com/hungdq1379/CloudNative_Project3/assets/113217676/a1b23335-5622-4d95-bd5d-a4cf04154f7a)
 
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
