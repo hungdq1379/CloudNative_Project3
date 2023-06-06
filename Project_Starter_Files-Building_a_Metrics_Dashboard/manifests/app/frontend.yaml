@@ -27,7 +27,7 @@ spec:
         env:
         - name: JAEGER_HOST
           value: app-tracer-agent.observability.svc.cluster.local:16686
-        image: barbietunnie/observability-frontend-app:latest
+        image: barbietunnie/observability-frontend-app:latest # Phải thay đỗi
         ports:
         - name: frontend-port
           protocol: TCP
