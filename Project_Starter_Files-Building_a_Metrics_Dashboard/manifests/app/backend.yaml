@@ -60,3 +60,25 @@ spec:
       protocol: tcp
       targetPort: 8080
   type: LoadBalancer
+  #Phan them vao
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: backend
+  namespace: monitoring
+  labels:
+    app: backend
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: backend
+      release: prometheus
+  endpoints:
+  - port: backend
+    path: /metrics
+    interval: 5s
+  namespaceSelector:
+  #   # any: true # also works (but is a catchall)
+    matchNames:
+    - observability  
