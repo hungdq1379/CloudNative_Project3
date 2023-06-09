@@ -1,18 +1,18 @@
+apiVersion: jaegertracing.io/v1
+kind: Jaeger
+metadata:
+  name: frontend-app
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-app
-  namespace: observability
+  name: frontend
   labels:
     name: frontend
-    release: prometheus
   annotations:
-    sidecar.jaegertracing.io/inject: "true"
-    prometheus.io/scrape: "true"
-    prometheus.io/path: /metrics
-    prometheus.io/port: frontend-port
+    "sidecar.jaegertracing.io/inject": "true"
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -22,50 +22,22 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        # We advise you to build, push and use your own image, instead of using instructor's image.
-        env:
-        - name: JAEGER_HOST
-          value: app-tracer-agent.observability.svc.cluster.local:16686
-        image: barbietunnie/observability-frontend-app:latest # Phải thay đỗi
-        ports:
-        - name: frontend-port
-          protocol: TCP
-          containerPort: 8080
+        - name: frontend
+          image: ghcr.io/jasonsmithio/my-sample-app:v2
+          imagePullPolicy: Always
+          ports:
+            - name: frontend-port
+              containerPort: 8000
+              protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
-  namespace: observability
-  labels:
-    app: frontend
-    release: prometheus
+    name: frontend
 spec:
-  selector:
-    app: frontend
-  ports:
-    - port: 8080
-      targetPort: 8080
-  type: LoadBalancer
----
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: frontend
-  namespace: monitoring
-  labels:
-    app: frontend
-    release: prometheus
-spec:
-  selector:
-    matchLabels:
-      app: frontend
-      release: prometheus
-  endpoints:
-  - port: frontend
-    path: /metrics
-    interval: 5s
-  namespaceSelector:
-    matchNames:
-      - observability
+    selector:
+        app: frontend
+    ports:
+        - protocol: TCP
+          port: 8000
+          targetPort: 8000
