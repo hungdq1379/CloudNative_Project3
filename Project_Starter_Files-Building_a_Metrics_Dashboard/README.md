@@ -31,6 +31,10 @@ For example, The application will have an uptime of 99.9% during the next year.
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
+![361419725_675027684468393_7537977158647134680_n](https://github.com/hungdq1379/CloudNative_Project3/assets/113217676/67742919-16fa-40b5-a376-eaf495b885c4)
+
+![361663972_638063828285051_6192776427831123656_n](https://github.com/hungdq1379/CloudNative_Project3/assets/113217676/16d7df55-86d7-43f8-80c3-e9c33a6844e8)
+
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
 
