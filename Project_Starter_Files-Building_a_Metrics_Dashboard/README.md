@@ -35,6 +35,8 @@ For example, The application will have an uptime of 99.9% during the next year.
 
 ![361663972_638063828285051_6192776427831123656_n](https://github.com/hungdq1379/CloudNative_Project3/assets/113217676/16d7df55-86d7-43f8-80c3-e9c33a6844e8)
 
+![361523766_642436817835655_8645289712328284017_n](https://github.com/hungdq1379/CloudNative_Project3/assets/113217676/f78514da-6ea6-4b27-aad8-629a36f129fb)
+
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
 
